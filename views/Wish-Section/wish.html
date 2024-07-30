@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electromo Shopping Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Nav-Section/nav.css">
+    <link rel="stylesheet" href="../Footer-Section/footer.css">
+    <script src="../Nav-Section/nav.js"></script>
+    <link rel="stylesheet" href="wish.css">
+    <script src="wish.js"></script>
+    <script src="https://kit.fontawesome.com/67739ecf35.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="png/x-icon" href="favicon2.png">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="paths">
+        <div class="path">
+            <a href="../index.html"> <i class="fa-solid fa-house"></i>Home</a> &gt; My Account
+        </div>
+    </div>
+<div class="container">
+    <div class="cont1 cont">
+        <h5>New Customer</h5>
+        <h3>Register</h3>
+        <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
+        <button onclick="openForm('signupForm')">Continue</button>
+    </div>
+    <div class="cont2 cont">
+        <h5>Returning Customer</h5>
+        <h3>I am returning customer</h3>
+        <form action="/login" method="post">
+            <div class="log-input">
+                <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+            </div>
+            <div class="log-input">
+                <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+            </div>
+            <a href="#">Forgotten password</a>
+            <button onclick="openForm('loginForm')">Login</button>
+        </form>
+
+    </div>
+</div>
+    </div>
+    <div id="contact-section"></div>
+</body>
+</html>

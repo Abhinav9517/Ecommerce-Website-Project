@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+@media screen and (max-width: 1080px) {
+    body{
+        width: 100vh;
+    }   
+    .ribbon-1, .ribbon-2{
+        top: -1.8%;
+    }
+    }
+
+#navbar {
+    padding: 40px 140px 0px 140px;
+    background-color: #dedbdb;
+}
+
+.paths {
+    padding: 40px 140px 0px 140px;
+}
+
+.path {
+    border: 1px solid #e0dfdf;
+    padding: 10px;
+    width: 100%;
+    color: #505050;
+
+}
+
+.path a i {
+    color: #515151;
+    margin: 4px 4px;
+}
+
+.path a {
+    text-decoration: none;
+    color: #505050;
+}
+
+.path i:hover,
+a:hover {
+    color: #00c2ff;
+}
+
+.container {
+    padding: 40px 140px 40px 140px;
+}
+
+.container>p {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    color: #424141;
+}
+
+.container a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgb(82 82 82);
+    transition: background-color;
+    transition-duration: 0.5s;
+    border-radius: 5px;
+    position: absolute;
+    color: #e6e6e6;
+    right: 12%;
+    font-size: 16px;
+    margin: 20px 0px;
+
+}
+
+.container a:hover {
+    background-color: rgb(0 159 220);
+}
+
+form>p {
+    border-bottom: 1px solid #dedede;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    color: #424141;
+}
+
+.return-input {
+    width: 100%;
+}
+
+.return-input label {
+    width: 33%;
+    display: flex;
+    color: #414141;
+
+}
+
+.return-input label i {
+    color: red;
+    font-size: 10px;
+
+}
+
+.return-input input {
+    width: 100%;
+    background-color: #4fa39e;
+}
+
+.return-input input[type='radio'] {
+    width: 40%;
+    margin: 20px;
+}
+
+.return-input textarea {
+    padding: 5px;
+}

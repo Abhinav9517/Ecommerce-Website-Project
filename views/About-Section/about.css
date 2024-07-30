@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+@media screen and (max-width: 1080px) {
+    body{
+        width: 100vh;
+    }   
+    .ribbon-1, .ribbon-2{
+        top: -1.8%;
+    }
+    }
+
+.paths{
+    padding: 40px 140px 0px 140px;
+}
+
+.path{
+    border: 1px solid #e0dfdf;
+    padding: 10px;
+    width: 100%;
+    color: #505050;
+    
+}
+.path a i{
+    color: #515151;
+    margin: 4px 4px;
+}
+
+.path a{
+    text-decoration: none;
+    color: #505050;
+}
+
+.path i:hover, a:hover{
+    color: #00c2ff;
+}
+
+.about-container{
+    margin-top: 50px;
+
+}
+
+.about-container>p{
+    text-align: center;
+    font-size: 23px;
+    margin: 25px;
+    font-weight: bolder;
+    background-color: rgb(231, 228, 228);
+    border: none;
+    padding: 5px 3px;
+    color: #005ed7;
+}
+
+.about-container p i{
+    color: #0066ff;
+    font-size: 20px;
+}
+
+.about-container>h3{
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    color: #1001ad;
+}
+
+.team{
+    display: flex;
+    margin: 100px 5px;
+
+}
+
+.team p{
+    margin: 25px;
+    font-size: 17px;
+    text-align: center;
+    color: #8d8d8d;
+}
+
+.team img{
+    height: 250px;
+    width: 250px;
+    margin: 0px auto;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.team img:hover{
+    transform: scale(1.2);
+
+}
+
+.team h3{
+    text-align: center;
+font-size: 23px;
+}
+
+.team h3{
+    text-align: center;
+line-height: 25px;
+margin: 15px;
+color: #00a8ff;
+}
+
+.img-box{
+    overflow: hidden;
+}
+
+.ceo {
+    justify-content: center;
+    align-items: center;
+}
+
+.ceo-data{
+    text-align: center;
+    padding: 0px 100px;
+
+}
+
+.ceo-data h3{
+    font-size: 40px;
+}

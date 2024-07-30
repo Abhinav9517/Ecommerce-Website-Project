@@ -1,0 +1,85 @@
+#sponsor {
+    padding: 40px 140px 0px 140px;
+
+}
+
+#sponsor img {
+    width: 100%;
+    /* height: 100%; */
+}
+
+#sponsor img:hover{
+cursor: pointer;
+}
+
+/* #contact-section {
+} */
+
+.foot{
+    background-color: rgb(70, 70, 70);
+    padding: 40px 140px 0px 140px;
+
+}
+
+.useful-links {
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.useful-links a {
+    text-decoration: none;
+    color: #23afd2;
+    font-size: 15px;
+    margin: 7px 0px;
+    transition: color;
+    transition-duration: 0.4s;
+}
+
+.useful-links a:hover {
+    color: wheat;
+}
+
+.useful-links p {
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}
+
+.Info {
+    margin: 5px 250px 5px 0px;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.accounts {
+    margin: 5px 250px 5px 0px;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.services {
+    margin: 5px 250px 5px 0px;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.footer {
+    border-top: 1px solid white;
+    display: flex;
+    align-items: center;
+    padding: 30px 50px;
+    color: white;
+}
+
+.footer img {
+    height: 40px;
+    width: 40px;
+    margin: 0px 10px;
+}

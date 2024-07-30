@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+#navbar {
+    padding: 40px 140px 0px 140px;
+    background-color: #dedbdb;
+}
+
+#slide-box {
+    padding: 40px 140px 0px 140px;
+    display: flex;
+    white-space: nowrap;
+
+}
+
+.slider {
+    border: 1px solid #bcb8b8;
+    display: flex;
+    /* height: 60vh; */
+    width: 69vw;
+}
+
+#slide-box {
+    animation: slide 10s linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-210%);
+    }
+
+}
+
+.slider-img-explain {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    /* top: 50%;  */
+    margin: 100px 17px;
+
+}
+
+.slider-img-explain h2 {
+    font-size: 30px;
+    color: #01c0c0;
+}
+
+.slider-img-explain p {
+    color: #625e5e;
+    margin: 5px 0px 20px 0px;
+}
+
+.slider-button {
+    background-color: #aaacac;
+    padding: 12px 10px;
+    width: 8vw;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    transition: background-color;
+    transition-duration: 0.4s;
+}
+
+.slider-button:hover {
+    background-color: #01c0c0;
+}
+
+#new-arrival {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px 65px;
+    padding: 40px 140px 0px 140px;
+    /* border: 2px solid black; */
+    height: 45vh;
+}
+
+.box {
+    position: relative;
+    /* border: 2px solid red; */
+}
+
+.box:hover {
+    cursor: pointer;
+}
+
+.box img {
+    transition: border;
+    transition-duration: 0.3s;
+}
+
+.box img:hover {
+    border: 6px solid rgb(0 142 255);
+}
+
+.arrivals-explain {
+    position: absolute;
+    top: 35%;
+    left: 8%;
+}
+
+.box h2 {
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+.box h5 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+}
+
+.box img {
+    height: 270px;
+    width: 370px;
+
+}
+
+#product-section {
+    padding: 40px 140px 0px 140px;
+    /* border: 2px solid rgb(181, 17, 44); */
+    height: 95vh;
+    overflow-y: hidden;
+}
+
+.product-head {
+    background-color: #b9b7b7;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.product-head p {
+    font-size: 23px;
+    font-family: sans-serif;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.scroller-btns button {
+    margin: 0px 10px;
+    /* border: 2px solid red; */
+    padding: 5px 10px;
+    background-color: #23afd2;
+    color: white;
+    border: none;
+
+}
+
+.scroller-btns button:hover {
+    background-color: #1e96b4;
+}
+
+#products {
+    display: flex;
+    overflow-x: scroll;
+    /* Enable horizontal scrolling */
+    white-space: nowrap;
+    /* Prevent menu items from wrapping to the next line */
+
+}
+
+.pro {
+    border: 1px solid silver;
+    margin: 30px 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 75vh;
+
+}
+
+.ribbon-1 {
+    position: absolute;
+    top: -3.5%;
+    left: -2.5%;
+    text-align: center;
+    border-radius: 0px;
+    /* transform: rotate(20deg); */
+    background-color: #0bd20a;
+    /* color: white; */
+    width: 70px;
+    font-size: 10px;
+    padding: 2px;
+
+}
+
+.ribbon-2 {
+    position: absolute;
+    top: -3.5%;
+    right: -0.5%;
+    text-align: center;
+    border-radius: 0px;
+    /* transform: rotate(20deg); */
+    background-color: #0074ff;
+    /* color: white; */
+    width: 66px;
+    font-size: 10px;
+    padding: 2px;
+}
+
+span {
+    --r: 15px;
+    --s: -8px;
+    --c: #d81a14;
+    --d: 8px;
+    line-height: 1.6;
+    padding-inline: 1.2lh calc(var(--r) + 0.2lh);
+    color: #fff;
+    background: linear-gradient(#0000 40%, #0002) var(--c);
+    clip-path: polygon(calc(1lh + var(--d)) 0, 100% 0, calc(100% - var(--r)) 50%, 100% 100%, calc(1lh + var(--d)) 100%, calc(1lh + var(--d)) calc(100% + var(--s) + var(--d)), calc(.5lh + var(--d)) calc(100% + var(--s) + var(--r) + var(--d)), var(--d) calc(100% + var(--s) + var(--d)), var(--d) 100%);
+    box-shadow: 0 0 10px #000, 0 0 0 999px var(--c);
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.pro img {
+    height: 200px;
+    width: 200px;
+    margin: 75px 0px;
+
+}
+
+.product-dt {
+    /* border: 2px solid red; */
+    margin-left: 10px;
+    line-height: 23px;
+}
+
+.product-dt h4 {
+    font-size: 20px;
+    color: #0085af;
+    font-weight: bolder;
+}
+
+.product-dt a {
+    text-decoration: none;
+    color: black;
+}
+
+.product-dt a:hover {
+    color: #0074ff;
+}
+
+.product-dt p {
+    color: grey;
+}
+
+.product-btn {
+    display: flex;
+    margin-top: 20px;
+}
+
+.product-btn i {
+    margin: 5px 5px;
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 15px;
+    background-color: gainsboro;
+    transition: background-color;
+    transition-duration: 0.5s;
+}
+
+.product-btn i:hover {
+    background-color: #3f3f3f;
+    color: white;
+
+}
+
+#cart-button {
+    background-color: #1e96b4;
+    transition: background-color;
+    transition-duration: 0.5s;
+
+}
+
+#cart-button:hover {
+    background-color: #3f3f3f;
+}
+
+.rating {
+    display: flex;
+    margin-top: 14px;
+}
+
+.rating i {
+    font-size: 20px;
+    color: #0085af;
+    margin: 2px 2px;
+}
+
+#sponsor {
+    padding: 40px 140px 0px 140px;
+
+}
+
+
+/* CHAT-BOT-CSS */
+
+#chatbot {
+    width: 300px;
+    background: linear-gradient(77deg, #f307f5c9, #0027ffc4 300px);
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 48%);
+    display: none;
+    position: fixed;
+    right: 0%;
+    bottom: 25%;
+    padding: 3px 5px;
+    color: white;
+}
+
+#chatbot-toggle {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    margin: 20px 20px;
+    background: transparent;
+    border: none;
+}
+
+#chatbot-toggle i {
+    font-size: 60px;
+    cursor: pointer;
+    color: #1b93ee;
+    transition: color;
+    transition-duration: 0.5s;
+}
+
+#chatbot-toggle i:hover {
+    color: #0056b3;
+}
+
+.chatbot input{
+    padding: 2px 10px;
+    font-size: 17px;
+    margin: 5px 0px;
+    width: 79%;
+
+}
+
+.chatbot button{
+    padding: 3px 8px;
+    font-size: 16px;
+}

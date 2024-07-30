@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+@media screen and (max-width: 1080px) {
+    body{
+        width: 100vh;
+    }   
+    .ribbon-1, .ribbon-2{
+        top: -1.8%;
+    }
+    }
+
+#navbar {
+    padding: 40px 140px 0px 140px;
+    background-color: #dedbdb;
+}
+
+.paths{
+    padding: 40px 140px 0px 140px;
+}
+
+.path{
+    border: 1px solid #e0dfdf;
+    padding: 10px;
+    width: 100%;
+    color: #505050;
+    
+}
+.path a i{
+    color: #515151;
+    margin: 4px 4px;
+}
+
+.path a{
+    text-decoration: none;
+    color: #505050;
+}
+
+.path i:hover, a:hover{
+    color: #00c2ff;
+}
+
+.container{
+    display: flex;
+    padding: 40px 140px 0px 140px;
+
+}
+
+.cont{
+    border: 1px solid rgb(240, 239, 239);
+    border-top: 3px solid #00c2ff;
+    margin: 40px 20px;
+    padding: 30px 30px;
+    width: 50%;
+    background-color: #f9f9f9;
+}
+
+.cont h3{
+    font-size: 15px;
+    font-weight: bolder;
+    margin: 35px 0px;
+    color: #555454;
+}
+
+.cont h5{
+    font-size: 25px;
+    color: #555454;
+}
+
+.cont1 p{
+    font-size: 15px;
+    color: #555454;
+    margin-bottom: 50px;
+
+}
+
+.cont1 button{
+    padding: 10px 10px;
+    border-radius: 5px;
+    background-color: rgb(215 215 215);
+    border: none;
+    text-shadow: 1px 1px 5px #5d5c5c;
+    box-shadow: 1px 1px 5px #434343;
+    transition: background-color;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.cont1 button:hover{
+    background-color: #09c3ff;
+}
+
+.cont2 form{
+      display: flex;
+ width: 100%;
+
+
+}
+
+.cont2 form div{
+    font-size: 15px;
+
+}
+
+.cont2 form input{
+       padding: 3px 3px;
+    margin: 0px 10px;
+     background-color: #be0098;
+    font-size: 13px;
+    width: 20vw;
+
+}
+
+.cont2 a{
+    text-decoration: none;
+    color: rgb(153 151 151);
+    transition: color;
+    transition-duration: 0.5s;
+}
+
+.cont2 a:hover{
+    color: #40a5e2;
+}
+
+.cont2 button{
+    padding: 10px 50px;
+    border-radius: 5px;
+    background-color: rgb(215 215 215);
+    border: none;
+    text-shadow: 1px 1px 5px #5d5c5c;
+    box-shadow: 1px 1px 5px #434343;
+    text-align: center;
+    /* margin: 0px auto; */
+    width: auto;
+    transform: background-color;
+    transition-duration: 0.5s;
+
+}
+
+.cont2 button:hover{
+    background-color: #09c3ff;
+
+}

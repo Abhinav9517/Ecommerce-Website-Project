@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electromo Shopping Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Nav-Section/nav.css">
+    <link rel="stylesheet" href="../Footer-Section/footer.css">
+    <script src="../Nav-Section/nav.js"></script>
+    <script src="https://kit.fontawesome.com/67739ecf35.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="png/x-icon" href="favicon1.png">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Nunito", sans-serif;
+        }
+
+        #navbar {
+            padding: 40px 140px 0px 140px;
+            background-color: #dedbdb;
+        }
+
+        .paths {
+            padding: 40px 140px 0px 140px;
+        }
+
+        .path {
+            border: 1px solid #e0dfdf;
+            padding: 10px;
+            width: 100%;
+            color: #505050;
+
+        }
+
+        .path a i {
+            color: #515151;
+            margin: 4px 4px;
+        }
+
+        .path a {
+            text-decoration: none;
+            color: #505050;
+        }
+
+        .path i:hover,
+        a:hover {
+            color: #00c2ff;
+        }
+
+        .item-container {
+            padding: 40px 140px 0px 140px;
+            display: flex;
+        }
+
+        .container {
+            position: relative;
+            display: inline-block;
+            margin: 5px 5px;
+        }
+
+        .image-box {
+            width: 45vw;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-box img {
+            width: 100%;
+        }
+
+        .container-detail {
+            width: 100%;
+            padding: 5px 40px;
+            flex-direction: column;
+            line-height: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-detail>h2 {
+            margin: 15px 0px;
+            color: #878787;
+            font-size: 28px;
+        }
+
+        .container-detail>a {
+            text-decoration: none;
+            color: #06a7d7;
+        }
+
+        .container-detail>p {
+            color: #878787;
+        }
+
+        .container-detail>a:hover {
+            color: rgb(7, 7, 7);
+        }
+
+        .price {
+            padding: 10px 0px;
+            color: #00b0db;
+            border-bottom: 1px solid #eae8e8;
+            font-size: 15px;
+        }
+
+        .select {
+            margin-top: 10px;
+        }
+
+        .select p {
+            display: flex;
+
+        }
+
+        .select p i {
+            font-size: 8px;
+            color: red;
+        }
+
+        select {
+            /* background-color: purple; */
+            background: linear-gradient(77deg, #f307f5c9, #0027ffc4 300px);
+            color: white;
+            width: 100%;
+            padding: 5px 5px;
+            font-size: 15px;
+
+        }
+
+        select option {
+            background: #b2a0dd;
+            font-size: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: grey;
+            transition: background-color;
+            transition-duration: 0.5s;
+            color: white;
+        }
+
+        .buttons a:hover {
+            background-color: #00b0db;
+        }
+
+        .review {
+            border-top: 1px solid #eae9e9;
+            border-bottom: 1px solid #eae9e9;
+            margin: 8px 0px;
+            padding: 5px 5px;
+        }
+
+        .review a {
+            display: flex;
+            text-decoration: none;
+            color: #00b0db;
+        }
+
+        .review a:hover {
+            color: #000;
+        }
+
+        .zoom-box {
+            width: 350px;
+            height: 350px;
+            overflow: hidden;
+            position: absolute;
+            top: 315px;
+            right: 220px;
+            /* Adjust this value to position the zoomed box */
+            border: 1px solid #000;
+            display: none;
+        }
+
+        .zoom-box img {
+            position: absolute;
+        }
+
+        .thumbnails {
+            margin-top: 20px;
+            padding: 40px 140px 0px 140px;
+        }
+
+        .thumbnails img {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            margin-right: 10px;
+            box-shadow: 1px 3px 10px #bbb8b8;
+
+        }
+
+        .thumbnails img:hover {
+            background-color: #f4f4f4;
+        }
+
+        /* Number-cart button */
+
+        .counter {
+            display: flex;
+            align-items: center;
+        }
+
+        .counter button {
+            padding: 3px 6px;
+            font-size: 15px;
+        }
+
+        .counter input {
+            width: 50px;
+            text-align: center;
+            font-size: 15px;
+            margin: 0px 10px;
+            padding: 3px 0px;
+        }
+
+        .item-detail {
+            padding: 40px 140px 0px 140px;
+            display: flex;
+        }
+
+        .detail-button {
+            border: 1px solid #f2f2f2;
+            height: 20%;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-button button {
+            height: 10%;
+            text-align: -webkit-left;
+            padding: 10px 15px;
+            font-size: 17px;
+            background-color: #f7f7f7;
+            color: #6f6f6f;
+            border: 1px solid #cfcfcf;
+        }
+
+        .detail-button button:hover {
+            background-color: white;
+            border-right: 2px solid black;
+            color: #06a7d7;
+        }
+
+        .detail-button-desc {
+            border: 1px dashed #cacaca;
+            padding: 40px 40px;
+            width: 70%;
+        }
+
+        #desc1 {
+            line-height: 25px;
+            color: #7f7f7f;
+            font-size: 17px;
+
+        }
+
+        #desc2 {
+            border: 1px solid #dedede;
+            display: none;
+        }
+
+        .specification {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+        }
+
+        .specification h5 {
+            border: 1px solid #dedede;
+            padding: 10px 10px;
+            width: 200%;
+            font-size: 16px;
+        }
+
+        .specification p {
+            border: 1px solid #dedede;
+            padding: 15px 20px;
+            font-size: 15px;
+            color: #7f7f7f;
+        }
+
+        .review-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid #dedede;
+        }
+
+        .review-list h4 {
+            padding: 10px 10px;
+            font-size: 20px;
+
+        }
+
+        .review-list h5 {
+            font-weight: lighter;
+            display: flex;
+            justify-content: right;
+            padding: 10px 15px;
+            font-size: 17px;
+        }
+
+        .review-list p {
+            border-top: 1px solid #dedede;
+            padding: 10px 10px;
+            width: 200%;
+            font-size: 16px;
+
+        }
+
+        .review-list p i {
+            color: #a4a4a4;
+        }
+
+        #desc3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            display: none;
+        }
+
+        #desc3>button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 11%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #dddddd;
+            margin-top: 50px;
+            font-size: 16px;
+            color: #282828;
+            cursor: pointer;
+            transition: color;
+            transition-duration: 0.5s;
+        }
+
+        #desc3>button:hover {
+            color: #00c2ff;
+        }
+
+        #desc3>i {
+            left: 0px;
+            position: relative;
+            top: 0px;
+            font-size: 30px;
+            margin-top: -12px;
+            background-color: #d7d7d7;
+            cursor: pointer;
+        }
+
+        #review-form {
+            display: flex;
+            align-items: stretch;
+            width: inherit;
+            display: none;
+        }
+
+        #review-form input {
+            margin: 10px 0px;
+            background: #63819b;
+            padding: 3px 3px;
+            border-radius: 3px;
+            width: 100%;
+
+        }
+
+        #review-form textarea {
+            margin: 10px 0px;
+            padding: 5px 5px;
+            border-radius: 3px;
+            width: 100%;
+        }
+
+        .review-rating {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .review-rating>p {
+            font-weight: lighter;
+
+        }
+
+        .review-rating>a {
+            text-decoration: none;
+            padding: 6px 15px;
+            background-color: #9a9a9a;
+            border-radius: 25px;
+            color: #f2f2f2;
+            transition: background-color;
+            transition-duration: 0.5s;
+            margin-left: 400px;
+        }
+
+        .review-rating>a:hover {
+            background-color: #00c2ff;
+
+        }
+
+        /* Product scroll bar */
+
+        #product-section {
+            padding: 40px 140px 0px 140px;
+            /* border: 2px solid rgb(181, 17, 44); */
+            height: 95vh;
+            overflow-y: hidden;
+        }
+
+        .product-head {
+            background-color: #b9b7b7;
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-head p {
+            font-size: 23px;
+            font-family: sans-serif;
+            text-align: center;
+            margin-left: 10px;
+        }
+
+        .scroller-btns button {
+            margin: 0px 10px;
+            /* border: 2px solid red; */
+            padding: 5px 10px;
+            background-color: #23afd2;
+            color: white;
+            border: none;
+
+        }
+
+        .scroller-btns button:hover {
+            background-color: #1e96b4;
+        }
+
+        #products {
+            display: flex;
+            overflow-x: scroll;
+            /* Enable horizontal scrolling */
+            white-space: nowrap;
+            /* Prevent menu items from wrapping to the next line */
+
+        }
+
+        .pro {
+            border: 1px solid silver;
+            margin: 30px 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            height: 75vh;
+
+        }
+
+        .ribbon-1 {
+            position: absolute;
+            top: -3.5%;
+            left: -2.5%;
+            text-align: center;
+            border-radius: 0px;
+            /* transform: rotate(20deg); */
+            background-color: #0bd20a;
+            /* color: white; */
+            width: 70px;
+            font-size: 10px;
+            padding: 2px;
+
+        }
+
+        .ribbon-2 {
+            position: absolute;
+            top: -3.5%;
+            right: -0.5%;
+            text-align: center;
+            border-radius: 0px;
+            /* transform: rotate(20deg); */
+            background-color: #0074ff;
+            /* color: white; */
+            width: 66px;
+            font-size: 10px;
+            padding: 2px;
+        }
+
+        span {
+            --r: 15px;
+            --s: -8px;
+            --c: #d81a14;
+            --d: 8px;
+            line-height: 1.6;
+            padding-inline: 1.2lh calc(var(--r) + 0.2lh);
+            color: #fff;
+            background: linear-gradient(#0000 40%, #0002) var(--c);
+            clip-path: polygon(calc(1lh + var(--d)) 0, 100% 0, calc(100% - var(--r)) 50%, 100% 100%, calc(1lh + var(--d)) 100%, calc(1lh + var(--d)) calc(100% + var(--s) + var(--d)), calc(.5lh + var(--d)) calc(100% + var(--s) + var(--r) + var(--d)), var(--d) calc(100% + var(--s) + var(--d)), var(--d) 100%);
+            box-shadow: 0 0 10px #000, 0 0 0 999px var(--c);
+            cursor: pointer;
+            transition: 0.3s linear;
+        }
+
+        .pro img {
+            height: 200px;
+            width: 200px;
+            margin: 75px 0px;
+
+        }
+
+        .product-dt {
+            /* border: 2px solid red; */
+            margin-left: 10px;
+            line-height: 23px;
+        }
+
+        .product-dt h4 {
+            font-size: 20px;
+            color: #0085af;
+            font-weight: bolder;
+        }
+
+        .product-dt a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .product-dt a:hover {
+            color: #0074ff;
+        }
+
+        .product-dt p {
+            color: grey;
+        }
+
+        .product-btn {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .product-btn i {
+            margin: 5px 5px;
+            padding: 8px 8px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 15px;
+            background-color: gainsboro;
+            transition: background-color;
+            transition-duration: 0.5s;
+        }
+
+        .product-btn i:hover {
+            background-color: #3f3f3f;
+            color: white;
+
+        }
+
+        #cart-button {
+            background-color: #1e96b4;
+            transition: background-color;
+            transition-duration: 0.5s;
+
+        }
+
+        #cart-button:hover {
+            background-color: #3f3f3f;
+        }
+
+        .rating {
+            display: flex;
+            margin-top: 14px;
+        }
+
+        .rating i {
+            font-size: 20px;
+            color: #0085af;
+            margin: 2px 2px;
+        }
+
+        #cart-tab {
+            border: 2px solid lightgreen;
+            background-color: #8eff8e;
+            text-shadow: 2px 2px 5px #5dc5ff;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            padding: 10px 10px;
+            font-size: 20px;
+            z-index: 1;
+        }
+
+        #wish-tab {
+            border: 2px solid lightgreen;
+            background-color: #8eff8e;
+            text-shadow: 2px 2px 5px #5dc5ff;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            padding: 10px 10px;
+            font-size: 20px;
+            z-index: 1;
+        }
+
+        .tab p i {
+            padding-right: 20px;
+            font-size: 30px;
+        }
+
+        .wish-tab {
+            display: none;
+        }
+
+        .cart-tab {
+            display: none;
+        }
+
+        @media screen and (max-width: 1080px) {
+        body{
+            width: 100vh;
+        }   
+        .ribbon-1, .ribbon-2{
+            top: -1.8%;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div id="cart-tab" class="cart-tab tab">
+        <p><i class="fa-solid fa-check"></i>The item has been added to the cart.</p>
+    </div>
+    <div id="wish-tab" class="wish-tab tab">
+        <p><i class="fa-solid fa-check"></i>The item has been added to the Wishlist.</p>
+    </div>
+    <div class="paths">
+        <div class="path">
+            <a href="../index.html"> <i class="fa-solid fa-house"></i>Home</a> &gt; Air Conditioner
+        </div>
+    </div>
+    <div class="item-container">
+        <div class="container">
+            <div class="image-box">
+                <img src="product-16-637x637.png" alt="Image" id="mainImage">
+            </div>
+        </div>
+        <div class="container-detail">
+            <div class="zoom-box" id="zoomBox">
+                <img src="product-16-1000x1000.png" alt="Zoomed Image" id="zoomedImage">
+            </div>
+            <h2>Air Conditioner W/ Full-Function</h2>
+            <p>Brands: TATA</p>
+            <p>Product-Code: Deluxe</p>
+            <p>Reward Points: 300</p>
+            <p>Availability: In Stock</p>
+            <div class="price">
+                <h2>&#8377; 24,499</h2>
+                <h2>Price in reward points: 300</h2>
+            </div>
+            <p>Available Options</p>
+            <div class="select">
+                <p>HD <i class="fa-solid fa-asterisk"></i></p>
+                <select name="mytv" id="tv">
+                    <option value="--Please Select--">--Please Select--</option>
+                    <option value="Smart tv without wifi">Featured with full function</option>
+                    <option value="2k">Featured with wifi and internet</option>
+                    <option value="4k">Cool and Hot Feature</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <a href="" id="showCartTab">Add to Cart</a>
+                <div class="counter">
+                    <button id="minus">-</button>
+                    <input type="number" id="count" value="0" readonly>
+                    <button id="plus">+</button>
+                </div>
+            </div>
+            <a href="" id="showWishTab">Add to Wishlist</a>
+            <a href="">Compare the Product</a>
+            <div class="review">
+                <div class="rating">
+                    <i class="fa-regular fa-star fa-2xs"></i>
+                    <i class="fa-regular fa-star fa-2xs"></i>
+                    <i class="fa-regular fa-star fa-2xs"></i>
+                    <i class="fa-regular fa-star fa-2xs"></i>
+                    <i class="fa-regular fa-star fa-2xs"></i>
+                </div>
+                <a href="">(1) review</a>
+                <a href="">Write a review</a>
+            </div>
+        </div>
+    </div>
+    <div class="thumbnails">
+        <img src="product-16-637x637.png" alt="Thumbnail 1" onclick="changeImage('product-16-1000x1000.png')">
+        <img src="product-17-133x133.png" alt="Thumbnail 2" onclick="changeImage('product-17-637x637.png')">
+        <img src="product-18-133x133.png" alt="Thumbnail 3" onclick="changeImage('product-18-637x637.png')">
+    </div>
+    <div class="item-detail">
+        <div class="detail-button">
+            <button id="descript-button">Description</button>
+            <button id="specific-button">Specification</button>
+            <button id="review-button">Reviews (1)</button>
+        </div>
+        <div class="detail-button-desc">
+            <div id="desc1" class="desc">Comfort is a very important thing nowadays because it is a condition of
+                satisfaction and
+                calmness. It is clear that our way of life must be as <strong>comfortable</strong> as possible. Home
+                electronics satisfy our wishes and make our life more pleasant. We must admit that our way of life
+                depends on quality of different goods of popular brands. Many of our clients were surprised by the
+                incredible assortment of products in our store. You know, we have many devoted customers all over the
+                world, and this fact proves that we sell only quality commodities. Recipe of our success is a fair price
+                and premium quality. We understand that it is very complicated to amaze present clients, they are so
+                whimsical, but our products are very flexible and reliable. <br>
+
+                Here you can find something more than just home electronics; you can find real comfort and satisfaction
+                here! Our goods are the combination of perfect design and an ideal functionality. We have a tremendous
+                variety of different models. Nowadays clients’ claims become so scrupulous that sometimes it is very
+                hard to satisfy them. But we provide only real bestsellers and our products have a great number of
+                options that can really help you. You’ll be amazed with its simplicity and durability. <br>
+
+                Our manufacturers and vendors provide only <strong>new technologies</strong> and it is very important
+                because nowadays we see a furious development of electronics industry. We also provide different
+                economical, social and even technological researches. The main goal of their analysis is to find out the
+                changes of clients’ demands and other useful data. We are trying to introduce positive results of our
+                explorations.</div>
+            <div id="desc2" class="desc">
+                <div class="specification">
+                    <h5>PRODUCT DESCRIPTION</h5>
+                    <h1></h1>
+                    <p>Weather Resistance</p>
+                    <p> Water and Dust resistant</p>
+                    <p>Technology</p>
+                    <p>Chinese Technology</p>
+                    <h5>SPECIFICATION</h5>
+                    <h1></h1>
+                    <p>Tech Spec</p>
+                    <p>Small Size with Ultra Cooling</p>
+                    <p>Power Consumption</p>
+                    <p>2000 Watt</p>
+                </div>
+            </div>
+            <div id="desc3" class="desc">
+                <div class="review-list">
+                    <h4>Ajay Gupta</h4>
+                    <h5>13/03/2024</h5>
+                    <p>I'm very happy with the result. Good Choice for Everyone! <br>
+                        <i class="fa-regular fa-star fa-2xs"></i>
+                        <i class="fa-regular fa-star fa-2xs"></i>
+                        <i class="fa-regular fa-star fa-2xs"></i>
+                        <i class="fa-regular fa-star fa-2xs"></i>
+                        <i class="fa-regular fa-star fa-2xs"></i>
+                    </p>
+                </div>
+                <button id="toggleButton">Write a Review
+                    <i class="fa-solid fa-caret-down"></i></button>
+                <form action="" id="review-form">
+                    Your Name:
+                    <input type="text" id="name" name="name" placeholder="Enter your Name">
+                    Your Review:
+                    <textarea name="review" id="review-text" cols="150" rows="10"
+                        placeholder="Write your Review..."></textarea>
+                    <div class="review-rating">
+                        Rating: <p>Bad</p>
+                        <input type="radio" id="review-rating" name="review-rating">
+                        <input type="radio" id="review-rating" name="review-rating">
+                        <input type="radio" id="review-rating" name="review-rating">
+                        <input type="radio" id="review-rating" name="review-rating">
+                        <input type="radio" id="review-rating" name="review-rating">
+                        <p>Good</p>
+                        <a href="">Submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="product-section">
+        <div class="product-head">
+            <p>Latest</p>
+            <div class="scroller-btns">
+                <button id="left-arrow">&lt;</button>
+                <button id="right-arrow">&gt;</button>
+            </div>
+        </div>
+        <div id="products">
+            <div class="pro-1 pro" onclick="window.location.href='../wireless soundbox/wireless.html';">
+                <span class="ribbon-1">New</span>
+                <span class="ribbon-2">Sale</span>
+                <img src="product-43-200x200.png" alt="Sound-box">
+                <div class="product-dt">
+                    <h4>&#8377;2,499</h4>
+                    <p><a href="../wireless soundbox/wireless.html">Wireless Audio SoundBar</a></p>
+                    <p>Comfort is very important things nowadays because it is a ...</p>
+                    <div class="product-btn">
+                        <i class="fa-solid fa-cart-shopping" id="cart-button" style="color: #000205;"
+                            title="Add to Cart"></i>
+                        <i class="fa-regular fa-heart" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: #000000;"
+                            title="Compare the Product"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-2 pro" onclick="window.location.href='../electric iron/iron.html';">
+                <span class="ribbon-1">New</span>
+                <span class="ribbon-2">Sale</span>
+                <img src="product-55-200x200.png" alt="Sound-box">
+                <div class="product-dt">
+                    <h4>&#8377;499</h4>
+                    <p><a href="../electric iron/iron.html">Master Iron with Anti-Drift System</a></p>
+                    <p>Comfort is very important things nowadays because it is a ...</p>
+                    <div class="product-btn">
+                        <i class="fa-solid fa-cart-shopping" id="cart-button" style="color: #000205;"
+                            title="Add to Cart"></i>
+                        <i class="fa-regular fa-heart" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: #000000;"
+                            title="Compare the Product"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-3 pro" onclick="window.location.href='../52 inch tv/52tv.html';">
+                <span class="ribbon-1">New</span>
+                <span class="ribbon-2">Sale</span>
+                <img src="product-52-200x200.png" alt="Sound-box">
+                <div class="product-dt">
+                    <h4>&#8377;12999</h4>
+                    <p><a href="../52 inch tv/52tv.html">48-Inch 1080p 60Hz Smart LED TV</a></p>
+                    <p>Comfort is very important things nowadays because it is a ...</p>
+                    <div class="product-btn">
+                        <i class="fa-solid fa-cart-shopping" id="cart-button" style="color: #000205;"
+                            title="Add to Cart"></i>
+                        <i class="fa-regular fa-heart" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: #000000;"
+                            title="Compare the Product"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-4 pro" onclick="window.location.href='../60-inch-tv/tv.html';">
+                <span class="ribbon-1">New</span>
+                <span class="ribbon-2">Sale</span>
+                <img src="product-49-200x200.png" alt="Sound-box">
+                <div class="product-dt">
+                    <h4>&#8377;24999</h4>
+                    <p><a href="../60-inch-tv/tv.html">65-Inch 4k Ultra HD Smart LED TV </a></p>
+                    <p>Comfort is very important things nowadays because it is a ...</p>
+                    <div class="product-btn">
+                        <i class="fa-solid fa-cart-shopping" id="cart-button" style="color: #000205;"
+                            title="Add to Cart"></i>
+                        <i class="fa-regular fa-heart" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: #000000;"
+                            title="Compare the Product"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-5 pro" onclick="window.location.href='../28 inch tv/tv28.html';">
+                <span class="ribbon-1">New</span>
+                <span class="ribbon-2">Sale</span>
+                <img src="product-46-200x200.png" alt="Sound-box">
+                <div class="product-dt">
+                    <h4>&#8377;9999</h4>
+                    <p><a href="../28 inch tv/tv28.html">28-Inch 720p 60Hz LED TV</a></p>
+                    <p>Comfort is very important things nowadays because it is a ...</p>
+                    <div class="product-btn">
+                        <i class="fa-solid fa-cart-shopping" id="cart-button" style="color: #000205;"
+                            title="Add to Cart"></i>
+                        <i class="fa-regular fa-heart" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: #000000;"
+                            title="Compare the Product"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-6 pro" onclick="window.location.href='../wireless soundbox/wireless.html';">
+                <span class="ribbon-1">New</span>
+                <span class="ribbon-2">Sale</span>
+                <img src="product-58-200x200.png" alt="Sound-box">
+                <div class="product-dt">
+                    <h4>&#8377;1999</h4>
+                    <p><a href="../wireless soundbox/wireless.html">Sound Box with Wireless Subwoofer</a></p>
+                    <p>Comfort is very important things nowadays because it is a ...</p>
+                    <div class="product-btn">
+                        <i class="fa-solid fa-cart-shopping" id="cart-button" style="color: #000205;"
+                            title="Add to Cart"></i>
+                        <i class="fa-regular fa-heart" title="Add to Wishlist"></i>
+                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: #000000;"
+                            title="Compare the Product"></i>
+                        <i class="fa-solid fa-eye" title="Quick View"></i>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                        <i class="fa-regular fa-star fa-2xs" style="color: #0085af;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-section"></div>
+    <script>
+        // Nav-Section JavaScript
+
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("../Nav-Section/nav.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar").innerHTML = data;
+                });
+        });
+
+        // Contact-Section Javascript 
+
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("../Footer-Section/footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("contact-section").innerHTML = data;
+                });
+        });
+
+        // Image Hovering Javascript
+
+        const mainImage = document.getElementById('mainImage');
+        const zoomBox = document.getElementById('zoomBox');
+        const zoomedImage = document.getElementById('zoomedImage');
+
+        mainImage.addEventListener('mousemove', function (event) {
+            const rect = mainImage.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            const zoomLevel = 3; // Adjust this value to control zoom level
+            const zoomWidth = zoomBox.offsetWidth;
+            const zoomHeight = zoomBox.offsetHeight;
+
+            zoomedImage.style.width = mainImage.offsetWidth * zoomLevel + 'px';
+            zoomedImage.style.height = mainImage.offsetHeight * zoomLevel + 'px';
+
+            const zoomX = x * zoomLevel - zoomWidth / 2;
+            const zoomY = y * zoomLevel - zoomHeight / 2;
+
+            zoomedImage.style.left = -zoomX + 'px';
+            zoomedImage.style.top = -zoomY + 'px';
+
+            zoomBox.style.display = 'block';
+        });
+
+        mainImage.addEventListener('mouseleave', function () {
+            zoomBox.style.display = 'none';
+        });
+
+        function changeImage(src) {
+            mainImage.src = src;
+            zoomedImage.src = src;
+        }
+
+        // Count-Cart JavaScript
+
+        const minusButton = document.getElementById('minus');
+        const plusButton = document.getElementById('plus');
+        const countInput = document.getElementById('count');
+
+        minusButton.addEventListener('click', () => {
+            countInput.value = parseInt(countInput.value) - 1;
+        });
+
+        plusButton.addEventListener('click', () => {
+            countInput.value = parseInt(countInput.value) + 1;
+        });
+
+        //Description Button JavaScript
+
+        //Desc1 Button JavaScript 
+        document.getElementById("descript-button").onclick = function () {
+            var box1 = document.getElementById("desc1");
+            var box2 = document.getElementById('desc2');
+            var box3 = document.getElementById('desc3');
+            if (box1.style.display === "none") {
+                box1.style.display = "block";
+                box2.style.display = "none"
+                box3.style.display = "none"
+            } else {
+                box1.style.display = "block";
+                box2.style.display = "none";
+                box3.style.display = "none";
+            }
+        };
+
+        //Desc2 Button JavaScript 
+        document.getElementById("specific-button").onclick = function () {
+            var box1 = document.getElementById("desc1");
+            var box2 = document.getElementById('desc2');
+            var box3 = document.getElementById('desc3');
+            if (box2.style.display === "none") {
+                box2.style.display = "block";
+                box1.style.display = "none";
+                box3.style.display = "none"
+            } else {
+                box2.style.display = "block";
+                box3.style.display = "none";
+                box1.style.display = "none";
+            }
+        };
+
+
+        //Desc3 Button JavaScript 
+        document.getElementById("review-button").onclick = function () {
+            var box1 = document.getElementById("desc1");
+            var box2 = document.getElementById('desc2');
+            var box3 = document.getElementById('desc3');
+            if (box3.style.display === "none") {
+                box3.style.display = "block";
+                box2.style.display = "none";
+                box1.style.display = "none";
+            } else {
+                box3.style.display = "block";
+                box2.style.display = "none";
+                box1.style.display = "none";
+            }
+        };
+
+
+
+        // Description JavaScript
+
+        document.getElementById("toggleButton").onclick = function () {
+            var box = document.getElementById("review-form");
+            if (box.style.display === "none") {
+                box.style.display = "block";
+            } else {
+                box.style.display = "none";
+            }
+        };
+
+        // Products- Scroller Button JavaScript
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('left-arrow').addEventListener('click', function () {
+                document.getElementById('products').scrollBy({
+                    left: -200, // Adjust the scroll amount as needed
+                    behavior: 'smooth'
+                });
+            });
+
+            document.getElementById('right-arrow').addEventListener('click', function () {
+                document.getElementById('products').scrollBy({
+                    left: 200, // Adjust the scroll amount as needed
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Cart TabBar Display JavaScript
+
+        document.getElementById('showCartTab').addEventListener('click', function (event) {
+            event.preventDefault();
+            const tabBar = document.getElementById('cart-tab');
+            tabBar.classList.remove('cart-tab');
+
+            setTimeout(() => {
+                tabBar.classList.add('cart-tab');
+            }, 5000); // Tab bar will be visible for 5 seconds
+        });
+
+
+        // Wishlist Display JavaScript
+
+        document.getElementById('showWishTab').addEventListener('click', function (event) {
+            event.preventDefault();
+            const tabBar = document.getElementById('wish-tab');
+            tabBar.classList.remove('wish-tab');
+
+            setTimeout(() => {
+                tabBar.classList.add('wish-tab');
+            }, 5000); // Tab bar will be visible for 5 seconds
+        });
+    </script>
+</body>
+
+</html>

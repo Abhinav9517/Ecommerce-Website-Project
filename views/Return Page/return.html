@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electromo Shopping Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Nav-Section/nav.css">
+    <link rel="stylesheet" href="../Footer-Section/footer.css">
+    <script src="../Nav-Section/nav.js"></script>
+    <script src="return.js"></script>
+    <link rel="stylesheet" href="return.css">
+    <script src="https://kit.fontawesome.com/67739ecf35.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="png/x-icon" href="favicon2.png">
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div class="paths">
+        <div class="path">
+            <a href="../index.html"> <i class="fa-solid fa-house"></i>Home</a> &gt; Product Returns
+        </div>
+    </div>
+    <div class="container">
+        <p>Please complete the form below to request an RMA number.</p>
+        <form action="/return" id="return-form" method="post">
+            <p>Order History</p>
+            <div class="return-input">
+                <label for="first-name">First Name<i class="fa-solid fa-asterisk"></i></label>
+                <input type="text" id="first-name" name="first-name" placeholder="First Name">
+            </div>
+            <div class="return-input">
+                <label for="last-name">Last Name<i class="fa-solid fa-asterisk"></i></label>
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name">
+            </div>
+            <div class="return-input">
+                <label for="return-email">Email<i class="fa-solid fa-asterisk"></i></label>
+                <input type="email" id="return-email" name="return-email" placeholder="Email">
+            </div>
+            <div class="return-input">
+                <label for="telephone">Telephone<i class="fa-solid fa-asterisk"></i></label>
+                <input type="tel" id="telephone" name="telephone" placeholder="Telephone">
+            </div>
+            <div class="return-input">
+                <label for="orderID">Order ID<i class="fa-solid fa-asterisk"></i></label>
+                <input type="number" id="orderID" name="orderID" placeholder="Order ID">
+            </div>
+            <div class="return-input">
+                <label for="orderdate">Order Date</label>
+                <input type="date" id="orderdate" name="orderdate">
+            </div>
+            <p>Product Information</p>
+            <div class="return-input">
+                <label for="productname">Product Name<i class="fa-solid fa-asterisk"></i></label>
+                <input type="text" id="productname" name="productname" placeholder="Product Name">
+            </div>
+            <div class="return-input">
+                <label for="productcode">Product Code<i class="fa-solid fa-asterisk"></i></label>
+                <input type="number" id="productcode" name="productcode" placeholder="Product Code">
+            </div>
+            <div class="return-input">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity">
+            </div>
+            <div class="return-input">
+                <label for="reason">Reason for Return<i class="fa-solid fa-asterisk"></i></label>
+                <input type="radio" id="reason1" name="reason"> Dead on Arrival
+                <input type="radio" id="reason2" name="reason"> Faulty, Supply Details
+                <input type="radio" id="reason3" name="reason"> Order Error
+                <input type="radio" id="reason4" name="reason"> Received Wrong Item
+            </div>
+            <div class="return-input">
+                <label for="condition">Product is opened <i class="fa-solid fa-asterisk"></i></label>
+                <input type="radio" id="condition1" name="condition"> Yes
+                <input type="radio" id="condition2" name="condition"> No
+            </div>
+            <div class="return-input">
+                <label for="othermessage">Faulty or other details:</label>
+                <textarea name="othermessage" id="othermessage" rows="15" cols="150" placeholder="Enter your fault message..."></textarea>
+            </div>
+        </form>
+        <a href="../index.html">Submit</a>
+    </div>
+    <div id="contact-section"></div>
+</body>
+
+</html>
